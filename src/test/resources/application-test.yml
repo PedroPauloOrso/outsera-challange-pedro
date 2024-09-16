@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

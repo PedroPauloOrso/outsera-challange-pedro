@@ -7,11 +7,15 @@ import com.pedro.orso.outsera.repository.StudioRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @SpringBootTest
+@ActiveProfiles("test")
 public class DataLoaderIntegrationTest {
 
     @Autowired
@@ -22,6 +26,12 @@ public class DataLoaderIntegrationTest {
 
     @Autowired
     private StudioRepository studioRepository;
+
+    @DynamicPropertySource
+    static void dataSourceProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.datasource.url", () ->
+                "jdbc:h2:mem:data_loader_test_db;DB_CLOSE_DELAY=-1");
+    }
 
     @Test
     @Transactional
