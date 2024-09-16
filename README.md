@@ -71,7 +71,7 @@
 
 ### Postman
 
-1. Pode ser testado pelos postmans exemplo que se encontram na pasta raiz: .\softdesign-challenge-pedro\SoftDesign - Pedro.postman_collection.json
+1. Pode ser testado pelos postmans exemplo que se encontram na pasta raiz: .\Outsera - Pedro.postman_collection.json
 
 
 
@@ -146,3 +146,7 @@
     Lombok
     MapStruct
     OpenCSV
+
+### Postman
+
+1. Can be tested with the example postmans in the root folder: .\Outsera - Pedro.postman_collection.json

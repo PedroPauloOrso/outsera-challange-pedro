@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "1d8975bb-bdfc-41ac-8176-a90ddc922647",
+		"name": "Outsera - Pedro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10529967"
+	},
+	"item": [
+		{
+			"name": "Producer",
+			"item": [
+				{
+					"name": "Get Producers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/producers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"producers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Producer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/producers/200",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"producers",
+								"200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Producer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pedro Orso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/producers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"producers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Producer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Task Title\",\r\n    \"taskStatus\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/producers/8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"producers",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Producer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Allen EDITED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/producers/200",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"producers",
+								"200"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Studio",
+			"item": [
+				{
+					"name": "Get Studios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/studios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"studios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Studio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/studios/60",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"studios",
+								"60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Studio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Studio TEST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/studios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"studios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Studio",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Task Title\",\r\n    \"taskStatus\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/studios/61",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"studios",
+								"61"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Studio",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"20th Century Fox - RENAMED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/studios/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"studios",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Get Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/movies/209",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"movies",
+								"209"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Movie TEST\",\r\n  \"releaseYear\": 2021,\r\n  \"winner\": true,\r\n  \"studios\": [\r\n    { \"id\": 1 },\r\n    { \"id\": 2 }\r\n  ],\r\n  \"producers\": [\r\n    {\"id\": 360},\r\n    {\"id\": 361}\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Task Title\",\r\n    \"taskStatus\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/movies/209",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"movies",
+								"209"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Studio",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 209,\r\n    \"title\": \"Movie TEST\",\r\n    \"releaseYear\": 2021,\r\n    \"winner\": true,\r\n    \"studios\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Associated Film Distribution\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"Lorimar Productions\"\r\n        }\r\n    ],\r\n    \"producers\": [\r\n        {\r\n            \"id\": 360,\r\n            \"name\": \"Pedro Orso\"\r\n        },\r\n        {\r\n            \"id\": 361,\r\n            \"name\": \"Pedro Orso\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/movies/208",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"movies",
+								"208"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Award",
+			"item": [
+				{
+					"name": "Get Vote Count by PautaId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"voteOption\": true,\r\n    \"associado\": {\r\n        \"id\": 3\r\n    },\r\n    \"pauta\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/awards/intervals",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"awards",
+								"intervals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
