@@ -6,15 +6,23 @@ import com.pedro.orso.outsera.repository.ProducerRepository;
 import com.pedro.orso.outsera.repository.StudioRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-@SpringBootTest
+import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
 @ActiveProfiles("test")
 public class DataLoaderIntegrationTest {
 
@@ -26,6 +34,9 @@ public class DataLoaderIntegrationTest {
 
     @Autowired
     private StudioRepository studioRepository;
+
+    @Autowired
+    private MockMvc mockMvc;
 
     @DynamicPropertySource
     static void dataSourceProperties(DynamicPropertyRegistry registry) {
@@ -57,5 +68,29 @@ public class DataLoaderIntegrationTest {
         // Check associations
         assert !movie.get().getProducers().isEmpty() : "Movie should have producers";
         assert !movie.get().getStudios().isEmpty() : "Movie should have studios";
+    }
+
+    @Test
+    public void testDataLoaderEnsuresCorrectDataThroughAPI() throws Exception {
+        // Checking if the first set of movies matches
+        // TODO Should I add more?
+        mockMvc.perform(get("/v1/movies"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(20)))
+
+                .andExpect(jsonPath("$[0].title").value("3000 Miles to Graceland"))
+                .andExpect(jsonPath("$[0].releaseYear").value(2001))
+                .andExpect(jsonPath("$[0].producers[0].name").value("Demian Lichtenstein"))
+                .andExpect(jsonPath("$[0].studios[0].name").value("Warner Bros."))
+
+                .andExpect(jsonPath("$[1].title").value("A Madea Christmas"))
+                .andExpect(jsonPath("$[1].releaseYear").value(2013))
+                .andExpect(jsonPath("$[1].producers[0].name").value("Ozzie Areu"))
+                .andExpect(jsonPath("$[1].studios[0].name").value("Lionsgate"))
+
+                .andExpect(jsonPath("$[2].title").value("A Madea Family Funeral"))
+                .andExpect(jsonPath("$[2].releaseYear").value(2019))
+                .andExpect(jsonPath("$[2].producers[0].name").value("Ozzie Areu"))
+                .andExpect(jsonPath("$[2].studios[0].name").value("Lionsgate"));
     }
 }
